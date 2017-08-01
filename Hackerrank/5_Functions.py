@@ -2,9 +2,9 @@
 # Site: Hackerrank
 # Language: Python
 # Problem statement:
-# Read an integer N for all non-negative integers i < N, print i^2
+# Given an integer N, print 1 - n on the same line
 
 if __name__ == '__main__':
     n = int(input())
-    for i in range(0, n):
-        print(pow(i, 2))
+    for i in range(1, n+1):
+        print(i, end='')

@@ -2,9 +2,10 @@
 # Site: Hackerrank
 # Language: Python
 # Problem statement:
-# Read an integer N for all non-negative integers i < N, print i^2
+#   Print the hash of a tuple of length n
 
 if __name__ == '__main__':
     n = int(input())
-    for i in range(0, n):
-        print(pow(i, 2))
+    integer_list = map(int, input().split())
+    t = tuple(integer_list)
+    print(hash(t))
