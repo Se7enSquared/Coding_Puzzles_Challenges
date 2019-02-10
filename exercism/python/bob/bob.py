@@ -1,12 +1,12 @@
-import re
-
 def hey(phrase):
-    if phrase.isupper():
-    	return 'Whoa, chill out!'
+    phrase = phrase.strip()
+    if not phrase:
+        return 'Fine. Be that way!'
+    elif phrase.isupper() and phrase.endswith('?'):
+        return "Calm down, I know what I'm doing!"
     elif phrase.endswith('?'):
-    	return 'Sure.'
-    # elif phrase.isspace() or phrase == '' and re.search(r"(\S*)\s*(\S*)", phrase) == '':
-    elif all(x.isalpha() or x.isspace() for x in phrase):
-    	return 'Fine. Be that way!'
+        return 'Sure.'
+    elif phrase.isupper():
+        return "Whoa, chill out!"
     else:
-    	return 'Whatever.'
+        return 'Whatever.'

@@ -1,7 +1,10 @@
-def is_pangram(word):
-    letters = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
-    for letter in letters:
-        if letter not in word.lower():
-        	return False
-    return True
-
+def is_pangram(sentence):
+    # if there are non alpha chars in the string, remove them
+    if any(not char.isalpha() for char in sentence.lower()):
+            sentence = ''.join([i for i in sentence if i.isalpha()])
+    # create a set of characters in the sentence
+    letters = set(sentence.lower())
+    # if the set has 26 characters, it contains every letter
+    if len(letters) == 26:
+        return True
+    return False
